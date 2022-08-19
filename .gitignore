@@ -1,3 +1,7 @@
+# Raw svg data
+pygame_emojis/emojis_data/svg
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
