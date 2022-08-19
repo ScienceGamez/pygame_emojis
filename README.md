@@ -13,6 +13,12 @@ This contain  **open source emojis**  from https://openmoji.org/
 
 It is very easy to include emojis in your game 😊
 
+First install the  📦 package 📦
+```
+pip install pygame-emojis
+```
+
+Then import the package from 🐍 python 🐍
 
 ```python
 
