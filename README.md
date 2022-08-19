@@ -2,6 +2,7 @@
 
 ✨✨✨ Load emojis in pygame. ✨✨✨
 
+[![Upload Python Package](https://github.com/ScienceGamez/pygame_emojis/actions/workflows/python-publish.yml/badge.svg)](https://github.com/ScienceGamez/pygame_emojis/actions/workflows/python-publish.yml)
 
 This contain  **open source emojis**  from https://openmoji.org/
 
