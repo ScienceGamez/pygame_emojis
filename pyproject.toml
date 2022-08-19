@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[project]
+name = "pygame_emojis"
+version = "0.1.0"
+authors = [
+  { name="Lionel42", email="lionel@sciencegames.ch" },
+]
+description = "API for using emojis in pygame."
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires = [
+    "pygame",
+    "emoji",
+    "cairosvg",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/ScienceGamez/pygame_emojis"
+"Bug Tracker" = "https://github.com/ScienceGamez/pygame_emojis/issues"
