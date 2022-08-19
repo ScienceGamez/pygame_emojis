@@ -18,11 +18,12 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-requires = [
+dependencies = [
     "pygame",
     "emoji",
     "cairosvg",
 ]
+
 
 [project.urls]
 "Homepage" = "https://github.com/ScienceGamez/pygame_emojis"
