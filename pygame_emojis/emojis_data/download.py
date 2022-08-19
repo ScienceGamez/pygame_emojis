@@ -11,11 +11,11 @@ def download(
     zip_url="https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-svg-color.zip",
 ):
     """Download the emojis from openmoji."""
-    print("Download the zip file from ", zip_url)
+    print("[pygame_emojis] Download the zip file from ", zip_url)
     resp = urlopen(zip_url)
     zipfile = ZipFile(BytesIO(resp.read()))
 
-    print("Extract the zip file to ", _SVG_DIR)
+    print("[pygame_emojis] Extract the zip file to ", _SVG_DIR)
     zipfile.extractall(_SVG_DIR)
 
 
