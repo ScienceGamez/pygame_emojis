@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pygame_emojis"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
   { name="Lionel42", email="lionel@sciencegames.ch" },
 ]
