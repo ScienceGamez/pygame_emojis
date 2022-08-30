@@ -51,15 +51,21 @@ def find_svg(emoji_: str) -> list[Path]:
     while code_list:
 
         code = "-".join(code_list)
+        # Check for the file matching code list
+        target_file = _SVG_DIR.with_name(f"{code}.svg")
+        if target_file.exists():
+            return target_file
+
+        # Check for more complex files
         possible_files = [f for f in _SVG_DIR.rglob(f"{code}*.svg")]
         if possible_files:
-            return possible_files
+            return possible_files[0]
 
         # Check with less complex code name
         code_list.pop()
 
     # Return an empty list if no file was found
-    return []
+    return None
 
 
 def load_emoji(
@@ -67,10 +73,10 @@ def load_emoji(
 ) -> pygame.Surface:
     """Load a surface corresponding to the emoji."""
 
-    possible_files = find_svg(emoji_)
-    logger.debug(f"{possible_files=}")
-    if possible_files:
-        return load_svg(possible_files[-1], size)
+    file = find_svg(emoji_)
+    logger.debug(f"{file=}")
+    if file is not None:
+        return load_svg(file, size)
     else:
         raise FileNotFoundError(f"No file available for emoji {emoji_}")
 
