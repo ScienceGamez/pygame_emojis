@@ -30,7 +30,7 @@ def find_code(emoji_: str) -> list[str]:
     return [f"{ord(e):X}" for e in emoji_]
 
 
-def find_svg(emoji_: str) -> list[Path]:
+def find_svg(emoji_: str) -> Path:
     """Find the svg file tha can be used.
 
     It uses the follwing method:
