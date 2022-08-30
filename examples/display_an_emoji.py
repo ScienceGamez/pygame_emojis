@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     pygame.font.init()
 
-    emojis_list = [":red_heart:", "👍", "🫶", "🏳️‍🌈", "😍"]
+    emojis_list = [":red_heart:", "👍", "🫶", "🏳️‍🌈", "😍", "🗡️"]
 
     def change_emoji():
         screen.fill((0, 0, 0))

@@ -38,9 +38,19 @@ def find_svg(emoji_: str) -> list[Path]:
     except Exception as e:
         raise EmojiNotFound(emoji_) from e
     logger.debug(f"{code_list=}")
-    code = "-".join(code_list)
-    possible_files = [f for f in _SVG_DIR.rglob(f"{code}*.svg")]
-    return possible_files
+
+    while code_list:
+
+        code = "-".join(code_list)
+        possible_files = [f for f in _SVG_DIR.rglob(f"{code}*.svg")]
+        if possible_files:
+            return possible_files
+
+        # Check with less complex code name
+        code_list.pop()
+
+    # Return an empty list if no file was found
+    return []
 
 
 def load_emoji(
