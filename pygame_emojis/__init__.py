@@ -31,7 +31,16 @@ def find_code(emoji_: str) -> list[str]:
 
 
 def find_svg(emoji_: str) -> list[Path]:
-    """Find the svg file tha can be used."""
+    """Find the svg file tha can be used.
+
+    It uses the follwing method:
+
+    * Find the unicode values of the emoji
+    * Tries to find files corresponding to the given unicode values
+    * If a file or more are found, return the files
+    * Otherwise try to find a file that matches less unicode values
+    * repeat until there are no values that were matched
+    """
 
     try:
         code_list = find_code(emoji_)
