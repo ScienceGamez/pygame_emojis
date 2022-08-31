@@ -71,7 +71,10 @@ def find_svg(emoji_: str) -> Path:
 def load_emoji(
     emoji_: str, size: tuple[int, int] | int = None
 ) -> pygame.Surface:
-    """Load a surface corresponding to the emoji."""
+    """Load a surface corresponding to the emoji.
+
+    If not found, raise a FileNotFoundError.
+    """
 
     file = find_svg(emoji_)
     logger.debug(f"{file=}")
