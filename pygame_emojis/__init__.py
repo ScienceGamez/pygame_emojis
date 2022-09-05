@@ -94,19 +94,3 @@ def load_svg(filename, size: tuple[int, int] | int = None) -> pygame.Surface:
     new_bites = cairosvg.svg2png(url=str(filename), **kwargs)
     byte_io = io.BytesIO(new_bites)
     return pygame.image.load(byte_io)
-
-
-if __name__ == "__main__":
-    # This will list all the files availabe for all the emojis known by emoji package
-    print(_SVG_DIR)
-
-    for e, v in emoji.EMOJI_DATA.items():
-        print(e, v)
-
-        try:
-            print(e, find_code(e))
-            print("Files: ", find_svg(e))
-        except:
-            print("Could not translate")
-        print(f_name := "{}*.svg".format(e))
-        print("Files v2: ", [f for f in _SVG_DIR.rglob(f_name)])
