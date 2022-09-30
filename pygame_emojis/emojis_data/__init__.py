@@ -4,5 +4,5 @@ from .download import _SVG_DIR, download
 
 
 if not _SVG_DIR.exists():
-    _SVG_DIR.mkdir()
+    _SVG_DIR.mkdir(parents=True)
     download()
