@@ -29,3 +29,15 @@ dependencies = [
 [project.urls]
 "Homepage" = "https://github.com/ScienceGamez/pygame_emojis"
 "Bug Tracker" = "https://github.com/ScienceGamez/pygame_emojis/issues"
+
+
+[tool.pytest.ini_options]
+markers = [
+    "unit: Unit tests that test individual functions in isolation",
+    "integration: Integration tests that test multiple components together",
+    "performance: Performance and benchmarking tests",
+    "slow: Tests that take a long time to run",
+    "network: Tests that require network access",
+    "requires_cairo: Tests that require CairoSVG to be installed",
+    "requires_emojis: Tests that require emoji files to be downloaded",
+]
