@@ -82,6 +82,10 @@ def load_emoji(
 
 def load_svg(filename: str, size: tuple[int, int] | int = None) -> pygame.Surface:
     """Handles loading and converting SVG files."""
+
+    if not cairo_installed:
+        raise ImportError("CairoSVG is not installed or not available. Cannot load SVG files.")
+    
     kwargs = {}
 
     if size:
