@@ -2,15 +2,10 @@ from io import BytesIO
 import pathlib
 from zipfile import ZipFile
 from urllib.request import urlopen
-
-try:
-    import cairosvg
-    cairo_installed = True
-except OSError: # OSError: no library called "cairo-2" was found
-    cairo_installed = False
+from pygame_emojis.emojis_data.svg import cairo_installed
 
 
-_EMOJIS_DIR: pathlib.Path = pathlib.Path(__file__).parent / "emojis"
+_EMOJIS_DIR: pathlib.Path = pathlib.Path(__file__).parent / ("svg" if cairo_installed else "png")
 
 
 def download():
@@ -28,5 +23,5 @@ def download():
 
 
 if __name__ == "__main__":
-    # Dowload the raw data
+    # Download the raw data
     download()
